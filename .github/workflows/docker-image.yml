@@ -24,10 +24,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
     - name: Build Docker image backend
-      run: docker build -t time-backend -f api/Dockerfile .
+      run: docker build . --file api/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/time-app
 
     - name: Build Docker image frontend
-      run:  docker build -t time-frontend -f frontend/Dockerfile .
+      run:  docker build . --file frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/time-app
 
     - name: Publish  images to Dockerhub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-app:latest
