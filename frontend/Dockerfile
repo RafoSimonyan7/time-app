@@ -2,11 +2,11 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY ../frontend/package*.json ./
+COPY package*.json ./
 
 RUN npm i && npm cache clean --force
 
-COPY ../frontend .
+COPY . ./
 
 ENV BACKEND_URL=http://localhost:5555
 
