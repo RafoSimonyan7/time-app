@@ -21,13 +21,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
     - name: Build Docker image frontend
-      run: docker build . --file ./frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/ftime
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ftime -f frontend/Dockerfile .
 
     - name: Publish frontend image to Dockerhub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-front:latest
 
     - name: Build Docker image backend
-      run: docker build . --file ./api/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/btime
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/btime -f api/Dockerfile .
 
     - name: Publish backend image to Dockerhub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-backend:latest
