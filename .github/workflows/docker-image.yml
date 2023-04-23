@@ -19,18 +19,20 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: checks
+      run: ls -la
       
-    - name: Build Docker image frontend
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ftime -f ./frontend/Dockerfile .
+    #- name: Build Docker image frontend
+    # run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ftime -f ./frontend/Dockerfile .
 
-    - name: Publish frontend image to Dockerhub
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-front:latest
+    #- name: Publish frontend image to Dockerhub
+    #  run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-front:latest
 
-    - name: Build Docker image backend
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/btime -f ./api/Dockerfile .
+    #- name: Build Docker image backend
+    #  run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/btime -f ./api/Dockerfile .
 
-    - name: Publish backend image to Dockerhub
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-backend:latest
+    #- name: Publish backend image to Dockerhub
+    #  run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/time-backend:latest
 
 
 
