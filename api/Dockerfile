@@ -11,7 +11,7 @@ COPY package*.json ./
 
 RUN npm i && npm cache clean --force
 
-COPY ../api .
+COPY . ./
 
 EXPOSE 3000
 
