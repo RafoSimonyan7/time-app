@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY ./frontend/package*.json ./frontend
+COPY package*.json ./
 
 RUN npm i && npm cache clean --force
 
