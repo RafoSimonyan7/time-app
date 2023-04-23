@@ -7,11 +7,11 @@ ENV MYSQL_DATABASE=time_db
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY api/package*.json ./
 
 RUN npm i && npm cache clean --force
 
-COPY . ./
+COPY ./api ./api
 
 EXPOSE 3000
 
