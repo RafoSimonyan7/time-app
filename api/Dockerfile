@@ -15,4 +15,4 @@ COPY ./api ./api
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["nodemon", "--exitcrash", "index.mjs"]
