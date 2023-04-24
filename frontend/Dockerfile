@@ -10,4 +10,6 @@ COPY ./frontend ./frontend
 
 ENV BACKEND_URL=http://localhost:5555
 
+EXPOSE 3000
+
 CMD ["npm", "run", "dev"]
