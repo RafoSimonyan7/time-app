@@ -1,13 +1,13 @@
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR /app/api
 
 COPY api/package*.json ./
 
 RUN npm i && npm cache clean --force
 
-COPY ./api ./api
+COPY ./api ./
 
-EXPOSE 5555
+EXPOSE 5000
 
 CMD ["npm", "run", "dev"]
